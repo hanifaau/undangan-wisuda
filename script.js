@@ -97,8 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
             snapshot.forEach((doc) => {
                 const wish = doc.data();
                 const wishEl = document.createElement('div');
-                wishEl.className = 'wish-item fade-in-up';
-                wishEl.style.animationDelay = '0.1s';
+                // Menggunakan animasi fadeIn standar agar tidak perlu IntersectionObserver
+                wishEl.className = 'wish-item';
+                wishEl.style.animation = 'fadeIn 0.5s ease-out forwards';
                 
                 let timeStr = "Baru saja";
                 if(wish.timestamp) {
