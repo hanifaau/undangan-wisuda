@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Wisuda - Hanifa Aulia Rahma</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cover Screen (Front Page) -->
+    <div id="cover-screen" class="cover-screen">
+        <div class="cover-content">
+            <h4 class="sub-title">Undangan Wisuda</h4>
+            <h1 class="main-title">Hanifa Aulia Rahma</h1>
+            <p class="degree">S.T. (Sarjana Teknik)</p>
+            
+            <div class="guest-info">
+                <p>Kepada Yth.</p>
+                <h2 id="guest-name-cover">Tamu Undangan</h2>
+                <p class="small-text">Mohon maaf bila ada kesalahan penulisan nama/gelar</p>
+            </div>
+            
+            <button id="open-invitation" class="btn-primary">Buka Undangan</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="main-content hidden">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="section hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container hero-text fade-in">
+                <h4 class="sub-title gold-text" style="font-size: 1.3rem; margin-bottom: 1.5rem; letter-spacing: 1px;">"Pada akhirnya, setiap langkah menemukan waktunya untuk sampai"</h4>
+                <h1 class="main-title mt-4">Hanifa Aulia Rahma, S.T.</h1>
+                <p class="degree gold-text">Bachelor of Industrial Engineering</p>
+                <p class="degree gold-text mt-2">Class of 2026</p>
+            </div>
+        </section>
+
+        <!-- Profile Section with 3 Photos -->
+        <section id="profile" class="section profile-section bg-dark-maroon">
+            <div class="container text-center fade-in">
+                <h2 class="section-title gold-text" style="text-transform: uppercase;">Momen Bahagia</h2>
+                
+                <div class="photo-gallery">
+                    <div class="photo-card fade-in-up photo-1" style="animation-delay: 0.1s;">
+                        <img src="assets/user_photo_2.jpg" alt="Wisuda Foto 1">
+                    </div>
+                    <div class="photo-card fade-in-up photo-2" style="animation-delay: 0.3s;">
+                        <img src="assets/user_photo_1.jpg" alt="Wisuda Foto 2 (Tengah)">
+                    </div>
+                    <div class="photo-card fade-in-up photo-3" style="animation-delay: 0.5s;">
+                        <img src="assets/user_photo_3.jpg" alt="Wisuda Foto 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Details -->
+        <section id="event-details" class="section event-section bg-deep-wine">
+            <div class="container text-center fade-in">
+                <h2 class="section-title gold-text" style="text-transform: uppercase;">Detail Acara</h2>
+                <div class="event-card">
+                    <h3 class="event-title">Acara Wisuda</h3>
+                    
+                    <div class="event-info">
+                        <p class="info-label">Hari & Tanggal</p>
+                        <p class="info-value">Minggu, 20 September 2026</p>
+                    </div>
+                    
+                    <div class="event-info">
+                        <p class="info-label">Waktu</p>
+                        <p class="info-value">14.00 WIB - Selesai</p>
+                    </div>
+                    
+                    <div class="event-info">
+                        <p class="info-label">Lokasi</p>
+                        <p class="info-value">Gedung Teknik Industri UNAND</p>
+                        <p class="small-text">Universitas Andalas, Padang</p>
+                    </div>
+                    
+                    <a href="https://maps.app.goo.gl/2JfZ2aQdCzQ4KyvW9" target="_blank" rel="noopener noreferrer" class="btn-primary mt-3">Lihat Google Maps</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown -->
+        <section id="countdown-section" class="section countdown-section bg-dark-maroon">
+            <div class="container text-center fade-in">
+                <h2 class="section-title gold-text">Menuju Hari Bahagia</h2>
+                <div class="countdown-wrapper">
+                    <div class="countdown-item">
+                        <span id="days" class="countdown-number">00</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours" class="countdown-number">00</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes" class="countdown-number">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds" class="countdown-number">00</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer bg-deep-wine">
+            <div class="container text-center">
+                <p class="body-text" style="max-width: 600px; margin: 0 auto;">"Sebuah pencapaian terasa lebih berarti ketika dirayakan bersama mereka yang telah menemani setiap langkah."</p>
+                <h3 class="gold-text mt-4" style="font-family: 'Cinzel', serif;">Hanifa Aulia Rahma, S.T.</h3>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

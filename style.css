@@ -1,0 +1,372 @@
+/* --- Design System & CSS Variables --- */
+:root {
+    /* Color Palette */
+    --deep-wine: #3B010B;
+    --dark-maroon: #560B18;
+    --burgundy: #75162D;
+    --sand-gold: #F2D9A0;
+    --champagne-beige: #F2E5C6;
+
+    /* Typography */
+    --font-title: 'Cinzel', serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lora', serif;
+}
+
+/* --- Base Reset & Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--champagne-beige);
+    background-color: var(--deep-wine);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Utilities --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 2rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.gold-text { color: var(--sand-gold); }
+.bg-deep-wine { background-color: var(--deep-wine); }
+.bg-dark-maroon { background-color: var(--dark-maroon); }
+.bg-burgundy { background-color: var(--burgundy); }
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.main-title {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: var(--sand-gold);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.sub-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--champagne-beige);
+}
+
+.body-text {
+    font-size: 1rem;
+    color: var(--champagne-beige);
+}
+
+.small-text {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.degree {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--sand-gold);
+    color: var(--deep-wine);
+    border: none;
+    padding: 12px 30px;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--champagne-beige);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+/* --- Layout Components --- */
+.section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+/* 1. Cover Screen */
+.cover-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(59, 1, 11, 0.7), rgba(59, 1, 11, 0.9)), url('assets/vintage_university_bg_1787457794672.png') no-repeat center center/cover;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 1s ease, visibility 1s;
+}
+
+.cover-content {
+    background: rgba(86, 11, 24, 0.85); /* Dark Maroon with opacity */
+    padding: 3rem 2rem;
+    border: 2px solid var(--sand-gold);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 90%;
+    width: 450px;
+    backdrop-filter: blur(4px);
+}
+
+.guest-info {
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px dashed var(--sand-gold);
+    border-bottom: 1px dashed var(--sand-gold);
+}
+
+.guest-info h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--champagne-beige);
+    margin: 0.5rem 0;
+}
+
+/* 2. Main Content Wrapper */
+.main-content {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.main-content.visible {
+    opacity: 1;
+}
+
+/* 3. Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('assets/vintage_university_bg_1787457794672.png') no-repeat center center/fixed;
+    background-size: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(59, 1, 11, 0.8); /* Deep wine overlay */
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+}
+
+/* 4. Profile Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.photo-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 3px solid var(--sand-gold);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    aspect-ratio: 3/4;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%; /* adjust so head is less likely to be cut off */
+    transition: transform 0.5s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Custom adjustment for the 1st photo (jilbab hitam kiri) */
+.photo-card.photo-1 img {
+    transform: scale(1.1) translateY(-4%);
+    object-position: center center;
+}
+.photo-card.photo-1:hover img {
+    transform: scale(1.15) translateY(-4%);
+}
+
+/* Custom adjustment for the 2nd photo (jilbab hitam jas) to align the head */
+.photo-card.photo-2 img {
+    transform: scale(1.15) translateY(-5%);
+    object-position: center center;
+}
+.photo-card.photo-2:hover img {
+    transform: scale(1.2) translateY(-5%);
+}
+
+/* Custom adjustment for the 3rd photo (grey hijab) to align the head */
+.photo-card.photo-3 img {
+    transform: scale(1.4) translateY(-8%);
+    object-position: center center;
+}
+.photo-card.photo-3:hover img {
+    transform: scale(1.45) translateY(-8%);
+}
+
+/* 5. Event Details */
+.event-card {
+    background-color: var(--burgundy);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(242, 217, 160, 0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.event-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--champagne-beige);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--sand-gold);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.event-info {
+    margin-bottom: 1.5rem;
+}
+
+.info-label {
+    font-family: var(--font-heading);
+    color: var(--sand-gold);
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.info-value {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* 6. Countdown */
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.countdown-item {
+    background-color: var(--burgundy);
+    border: 2px solid var(--sand-gold);
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    min-width: 90px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.countdown-number {
+    display: block;
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: var(--sand-gold);
+    line-height: 1;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 7. Footer */
+.footer {
+    padding: 3rem 0;
+    border-top: 1px solid rgba(242, 217, 160, 0.2);
+}
+
+/* --- Animations --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    .section {
+        padding: 3rem 0;
+    }
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+    .countdown-item {
+        min-width: 70px;
+        padding: 1rem 0.5rem;
+    }
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+}
