@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(59, 1, 11, 0.7), rgba(59, 1, 11, 0.9)), url('assets/vintage_university_bg_1787457794672.png') no-repeat center center/cover;
+    background: linear-gradient(rgba(59, 1, 11, 0.6), rgba(59, 1, 11, 0.9)), url('assets/new_bg_2.png') no-repeat center center/cover;
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('assets/vintage_university_bg_1787457794672.png') no-repeat center center/fixed;
+    background: url('assets/new_bg_2.png') no-repeat center center/fixed;
     background-size: cover;
 }
 
@@ -190,7 +190,8 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(59, 1, 11, 0.8); /* Deep wine overlay */
+    background: rgba(59, 1, 11, 0.75); /* Deep wine overlay to tint the B&W image */
+    mix-blend-mode: multiply; /* Helps the color blend nicely with the B&W image */
 }
 
 .hero-text {
@@ -253,21 +254,71 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.45) translateY(-8%);
 }
 
-/* 5. Event Details */
+/* --- Decorative Elements --- */
+.vintage-divider {
+    text-align: center;
+    color: var(--sand-gold);
+    margin: 2rem 0;
+    position: relative;
+    opacity: 0.7;
+}
+.vintage-divider::before, .vintage-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 25%;
+    height: 1px;
+    background: var(--sand-gold);
+}
+.vintage-divider::before { left: 15%; }
+.vintage-divider::after { right: 15%; }
+.vintage-divider span {
+    font-size: 1.5rem;
+}
+
+/* Parallax Banner */
+.parallax-banner {
+    height: 350px;
+    background: url('assets/new_bg_1.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    border-top: 2px solid var(--sand-gold);
+    border-bottom: 2px solid var(--sand-gold);
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+}
+.parallax-banner::after {
+    content: '';
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(59, 1, 11, 0.5); /* Tint to match theme */
+    mix-blend-mode: multiply;
+}
+
+/* 5. Event Details (Parchment Card) */
 .event-card {
-    background-color: var(--burgundy);
+    background-color: var(--champagne-beige); /* Parchment color */
+    color: var(--deep-wine);
     padding: 3rem 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(242, 217, 160, 0.3);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    border: 4px double var(--dark-maroon);
+    box-shadow: inset 0 0 30px rgba(86, 11, 24, 0.15), 0 10px 25px rgba(0,0,0,0.4);
+    position: relative;
+}
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 6px; right: 6px; bottom: 6px;
+    border: 1px solid rgba(86, 11, 24, 0.3);
+    pointer-events: none;
 }
 
 .event-title {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    color: var(--champagne-beige);
+    font-size: 1.8rem;
+    color: var(--dark-maroon);
     margin-bottom: 2rem;
-    border-bottom: 1px solid var(--sand-gold);
+    border-bottom: 2px solid var(--dark-maroon);
     padding-bottom: 0.5rem;
     display: inline-block;
 }
@@ -278,14 +329,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .info-label {
     font-family: var(--font-heading);
-    color: var(--sand-gold);
+    color: var(--burgundy);
     font-size: 1.1rem;
     margin-bottom: 0.2rem;
+    font-weight: bold;
 }
 
 .info-value {
     font-size: 1.2rem;
     font-weight: 500;
+}
+
+.event-card .btn-primary {
+    background-color: var(--dark-maroon);
+    color: var(--sand-gold);
+}
+.event-card .btn-primary:hover {
+    background-color: var(--deep-wine);
+    color: var(--champagne-beige);
 }
 
 /* 6. Countdown */
