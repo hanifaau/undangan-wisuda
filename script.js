@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const openBtn = document.getElementById('open-invitation');
     const coverScreen = document.getElementById('cover-screen');
     const mainContent = document.getElementById('main-content');
+    const bgMusic = document.getElementById('bg-music');
+    const musicControl = document.getElementById('music-control');
 
     openBtn.addEventListener('click', () => {
         // Hide Cover
@@ -46,7 +48,28 @@ document.addEventListener('DOMContentLoaded', () => {
             // Trigger scroll animations for elements already in view
             handleScrollAnimation();
         }, 100);
+
+        // Play background music
+        if(bgMusic) {
+            bgMusic.volume = 0.6;
+            bgMusic.play().catch(e => console.log("Music play blocked by browser", e));
+        }
     });
+
+    // Music Control Button Logic
+    if(musicControl && bgMusic) {
+        musicControl.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicControl.classList.remove('paused');
+                musicControl.classList.add('playing');
+            } else {
+                bgMusic.pause();
+                musicControl.classList.remove('playing');
+                musicControl.classList.add('paused');
+            }
+        });
+    }
 
     // Disable body scroll initially
     document.body.style.overflowY = 'hidden';
