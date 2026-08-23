@@ -97,6 +97,26 @@
             </div>
         </section>
 
+        <!-- Ucapan & Doa -->
+        <section id="wishes-section" class="section wishes-section bg-deep-wine">
+            <div class="container fade-in">
+                <h2 class="section-title gold-text text-center" style="text-transform: uppercase;">Ucapan & Doa</h2>
+                <div class="vintage-divider" style="margin-top: -1rem; margin-bottom: 2rem;"><span>❖</span></div>
+                
+                <div class="wishes-container">
+                    <form id="wishes-form" class="wishes-form">
+                        <input type="text" id="wish-name" placeholder="Nama Anda" required>
+                        <textarea id="wish-message" rows="4" placeholder="Tulis ucapan dan doa untuk Hanifa..." required></textarea>
+                        <button type="submit" class="btn-primary mt-2" style="width: 100%;">Kirim Ucapan</button>
+                    </form>
+                    
+                    <div class="wishes-list" id="wishes-list">
+                        <!-- Komentar akan diisi oleh JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Countdown -->
         <section id="countdown-section" class="section countdown-section bg-dark-maroon">
             <div class="container text-center fade-in">
@@ -135,6 +155,6 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
