@@ -96,26 +96,26 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Buttons --- */
 .btn-primary {
     display: inline-block;
-    background-color: var(--sand-gold);
-    color: var(--deep-wine);
-    border: none;
-    padding: 12px 30px;
+    background-color: transparent;
+    color: var(--sand-gold);
+    border: 1px solid var(--sand-gold);
+    padding: 12px 35px;
     font-family: var(--font-heading);
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 30px;
     text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
 }
 
 .btn-primary:hover {
-    background-color: var(--champagne-beige);
+    background-color: var(--sand-gold);
+    color: var(--deep-wine);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 20px rgba(242, 217, 160, 0.2);
 }
 
 /* --- Layout Components --- */
@@ -141,21 +141,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cover-content {
-    background: rgba(86, 11, 24, 0.85); /* Dark Maroon with opacity */
-    padding: 3rem 2rem;
-    border: 2px solid var(--sand-gold);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: rgba(59, 1, 11, 0.65); /* More transparent for modern glassmorphism */
+    padding: 3.5rem 2rem;
+    border: 1px solid rgba(242, 217, 160, 0.3); /* Subtle elegant border */
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
     max-width: 90%;
-    width: 450px;
-    backdrop-filter: blur(4px);
+    width: 420px;
+    backdrop-filter: blur(12px);
 }
 
 .guest-info {
     margin: 2rem 0;
     padding: 1.5rem 0;
-    border-top: 1px dashed var(--sand-gold);
-    border-bottom: 1px dashed var(--sand-gold);
+    border-top: 1px solid rgba(242, 217, 160, 0.2); /* Sleek solid line instead of dashed */
+    border-bottom: 1px solid rgba(242, 217, 160, 0.2);
 }
 
 .guest-info h2 {
@@ -340,8 +340,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .event-card .btn-primary {
-    background-color: var(--dark-maroon);
-    color: var(--sand-gold);
+    background-color: transparent;
+    color: var(--deep-wine);
+    border-color: var(--deep-wine);
 }
 .event-card .btn-primary:hover {
     background-color: var(--deep-wine);
