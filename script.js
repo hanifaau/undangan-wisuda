@@ -195,4 +195,16 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(el);
         });
     };
+
+    // 5. Parallax Effect for Ornaments
+    const parallaxElements = document.querySelectorAll('.parallax-el');
+    window.addEventListener('scroll', () => {
+        let scrollY = window.scrollY;
+        parallaxElements.forEach(el => {
+            let speed = el.getAttribute('data-speed');
+            if (speed) {
+                el.style.transform = `translateY(${scrollY * parseFloat(speed)}px)`;
+            }
+        });
+    });
 });

@@ -637,3 +637,59 @@ h1, h2, h3, h4, h5, h6 {
     70% { box-shadow: 0 0 0 10px rgba(242, 217, 160, 0); }
     100% { box-shadow: 0 0 0 0 rgba(242, 217, 160, 0); }
 }
+
+/* 9. Ornaments */
+.ornament {
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.8;
+    mix-blend-mode: multiply; /* Helps blend white background from generated images */
+    filter: contrast(1.2) drop-shadow(0 5px 15px rgba(0,0,0,0.4));
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Cover Ornaments */
+.ornament-cover-1 {
+    top: 5%;
+    left: -5%;
+    width: 200px;
+    transform: rotate(15deg);
+}
+
+/* Hero Ornaments */
+.ornament-hero-1 {
+    top: 10%;
+    right: -10%;
+    width: 300px;
+    transform: rotate(-20deg);
+}
+
+/* Banner Ornaments */
+.ornament-banner-1 {
+    bottom: -15%;
+    left: 10%;
+    width: 250px;
+    transform: rotate(45deg);
+}
+
+/* Seal Ornament */
+.ornament-seal {
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    z-index: 5;
+    mix-blend-mode: normal; /* Seal might need normal blending */
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Parallax JS Elements */
+.parallax-el {
+    transition: transform 0.1s cubic-bezier(0.2, 0, 0.2, 1);
+}
