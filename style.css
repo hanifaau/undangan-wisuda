@@ -637,3 +637,43 @@ h1, h2, h3, h4, h5, h6 {
     70% { box-shadow: 0 0 0 10px rgba(242, 217, 160, 0); }
     100% { box-shadow: 0 0 0 0 rgba(242, 217, 160, 0); }
 }
+
+/* 9. Aesthetic Ornaments (User Uploaded) */
+.aesthetic-ornament {
+    position: absolute;
+    pointer-events: none;
+    z-index: 5;
+    mix-blend-mode: multiply; /* Removes white background and blends beautifully with dark maroon */
+    opacity: 0.85;
+    animation: gentle-float 8s ease-in-out infinite;
+    filter: contrast(1.1) brightness(1.1);
+}
+
+.ornament-pos-1 {
+    top: -5%;
+    left: -15%;
+    width: 350px;
+    transform: rotate(15deg);
+    opacity: 0.7;
+}
+
+.ornament-pos-2 {
+    bottom: 5%;
+    right: -10%;
+    width: 300px;
+    transform: rotate(-15deg);
+}
+
+.ornament-pos-3 {
+    top: -40px;
+    left: -40px;
+    width: 150px;
+    transform: rotate(25deg);
+    z-index: 10;
+}
+
+@keyframes gentle-float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(3deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
