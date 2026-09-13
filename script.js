@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Countdown Timer Logic
     // Target Date: 20 September 2026 14:00:00 WIB (WIB is UTC+7)
     // Create date string that implies local time for the user assuming they are in WIB or we explicitly use timezone
-    const targetDate = new Date("Sep 20, 2026 14:00:00").getTime();
+    const targetDate = new Date("Sep 19, 2026 15:00:00").getTime();
 
     const updateCountdown = () => {
         const now = new Date().getTime();
